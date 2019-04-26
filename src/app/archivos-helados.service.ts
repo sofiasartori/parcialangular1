@@ -26,5 +26,5 @@ export class ArchivosHeladosService {
   }
 //Validaciones https://github.com/mmirotta/FormValidator
 /*el php tiene que estar corriendo en el xamp, en htdocs y en api le tengo que poner la url del proyecto php levantado
-y en ruta el componente del helado q quiero traer o algo asi...*/
+y en ruta el componente del helado q quiero traer o algo asi...probar primero con postman si anda*/
 }
