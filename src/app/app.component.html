@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<table class="table table-condensed">
+<table class="table table-condensed" style="border-width: 2px; border-color: black; border-style: solid;">
   <thead>
     <tr>
       <th>Sabor</th>
@@ -13,11 +13,8 @@
       <td>{{helado.sabor}} </td>
       <td>{{helado.tipo}} </td>
       <td>{{helado.kilos}} </td>
-      <td>{{helado.foto}} </td>
-
+      <td><img class="fotoHelado" [src]="helado.imageUrl" /> </td>
     </tr>
-
   </tbody>
 </table>
-
 <router-outlet></router-outlet>

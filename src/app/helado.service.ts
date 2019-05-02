@@ -13,8 +13,11 @@ export class HeladoService {
 
   filtrado: any;
 
-  traertodos(ruta: string, filtro: string){
-    return this.miHttp.traerHelados('helado').then(data=>{
-      console.log('helado service',data);});
+  traertodos(ruta: string, filtro: string) {
+    return this.miHttp.traerHelados('helados/').then(data => {
+      console.log('helado service', data);
+      return data;
+    });
+
   }
 }

@@ -1,5 +1,5 @@
 import { HeladoService } from './helado.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'parcial';
   listado: any;
   miHeladoServicio: HeladoService;
@@ -16,14 +16,22 @@ export class AppComponent {
   kilos: number;
   foto: MediaDevices;
 
-    constructor(serviceHelados: HeladoService) {
-      this.miHeladoServicio = serviceHelados;
+  constructor(serviceHelados: HeladoService) {
+    this.miHeladoServicio = serviceHelados;
 
-    }
 
-    TraerTodos(){
-      this.miHeladoServicio.traertodos('helados/', 'todos').then(data => {
-        this.listado = data;
-      } )
-    }
+  }
+  ngOnInit() {
+    this.TraerTodos();
+  }
+  TraerTodos() {
+    /*this.miHeladoServicio.traertodos('helados/', '').then(data => {
+      this.listado = data;
+      console.log(data);
+    } )*/
+    this.miHeladoServicio.traertodos('helados/', '').then(data => {
+      this.listado = data
+      console.log(data)
+    })
+  }
 }

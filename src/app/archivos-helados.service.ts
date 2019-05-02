@@ -1,13 +1,13 @@
 import { MiHttpService } from './mi-http.service';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArchivosHeladosService {
 
-  api = '';
+  api = 'http://localhost/helados/apirest.php/';
   peticion: any;
   constructor( public miHttp: MiHttpService ) {
   }

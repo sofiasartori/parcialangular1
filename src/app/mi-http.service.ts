@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { throwError } from 'rxjs'; 
 
 
 @Injectable({
@@ -37,8 +38,8 @@ export class MiHttpService {
   public httpGetO ( url: string): Observable<any>
   {
     return this.http.get( url )
-      .map( ( res: Response ) => res.json())
-      .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
+      .map( ( res: Response ) => res)
+      .catch( ( err: any ) => throwError(err || 'Server error'));
   }
 
 
